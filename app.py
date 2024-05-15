@@ -166,6 +166,18 @@ with tab2:
 </style>
 """
     st.write(custom_css, unsafe_allow_html=True)
+    st.data_editor(
+    result_df,
+    column_config={
+        "widgets": st.column_config.Column(
+            width="medium",
+            required=True,
+        )
+    },
+    hide_index=True,
+    num_rows="dynamic",
+    )
+
 
     st.markdown(html_temp.format("rgba(55, 53, 47, 0.16)"),unsafe_allow_html=True)
 
@@ -280,6 +292,18 @@ with tab3:
 
     # Create a dataframe from the data list
     nature_df = pd.DataFrame(data)
+    st.data_editor(
+    nature_df,
+    column_config={
+        "widgets": st.column_config.Column(
+            width="medium",
+            required=True,
+        )
+    },
+    hide_index=True,
+    num_rows="dynamic",
+    )
+
 
     with st.expander("Extracted papers"):
             st.dataframe(nature_df)
