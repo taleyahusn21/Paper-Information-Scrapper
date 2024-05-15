@@ -93,7 +93,7 @@ with tab1:
         input_url = url_begin+text_formated+url_end
         if input_url:
             response=requests.get(input_url,headers=headers)
-            for i in range (0,4,2):
+            for i in range (1,6):
                 # get url for the each page
                 url = input_url.format(i)
                 # function for the get content of each page
